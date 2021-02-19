@@ -7,8 +7,13 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
+import { parseISO, format } from 'date-fns';
 
 import DateFormatter from 'components/date-formatter';
+import { useMemo } from 'react';
+import { urlFor } from 'lib/api';
+import PostType from 'types/post';
 
 const useStyles = makeStyles({
   root: {
@@ -16,17 +21,19 @@ const useStyles = makeStyles({
   },
 });
 
-const defaultPost = {
-  coverImageSrc: '/assets/unsplash-asoggetti.jpg',
-  coverImageAlt: 'look at dem mountains',
-  title: 'Super crazy blog post',
-  date: Date.now(),
-  body:
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt tempora eos doloribus natus? Impedit eligendi ea cupiditate delectus sit maiores.',
+type BlogCardProps = {
+  blogPost: PostType;
 };
 
-export function BlogCard({ blogPost = defaultPost }) {
+export function BlogCard({ blogPost }: BlogCardProps) {
   const classes = useStyles();
+
+  const postPreview = useMemo(() => {
+    console.log(JSON.stringify(blogPost));
+    const arr = blogPost.body[0].children[0].text.split(' ');
+    const preview = arr.slice(0, 25).join(' ') + ' ...';
+    return preview;
+  }, [blogPost]);
 
   // TODO: this entire card should be clickable/submittable (a11y + UX)
   return (
@@ -35,25 +42,31 @@ export function BlogCard({ blogPost = defaultPost }) {
         <CardMedia
           component="img"
           alt={blogPost.coverImageAlt}
-          height="200"
-          image={blogPost.coverImageSrc}
+          height="150"
+          image={urlFor(blogPost.coverImage).url()}
           title={blogPost.coverImageAlt}
         />
         <CardContent>
-          <Typography gutterBottom variant="h4" component="h3">
+          <Typography variant="h4" component="h3">
             {blogPost.title}
           </Typography>
-          {/* <DateFormatter dateString={blogPost.date.toString()} /> */}
+          <Typography component="time" variant="body2">
+            {format(parseISO(blogPost.date), 'LLLL d, yyyy')}
+          </Typography>
           <Box fontStyle="italic">
             <Typography variant="body1" color="textSecondary" component="p">
-              {blogPost.body}
+              {postPreview}
             </Typography>
           </Box>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        {/* TODO: include a little arrow button, similar to https://kentcdodds.com/ blog card */}
-        <Button size="small" color="primary" variant="outlined">
+        <Button
+          size="medium"
+          color="primary"
+          variant="outlined"
+          endIcon={<ArrowRightAltIcon />}
+        >
           Read more
         </Button>
       </CardActions>

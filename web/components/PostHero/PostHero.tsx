@@ -20,7 +20,7 @@ export function PostHero({ post = defaultPost }) {
       rgba(0,0,0,0) 0%, 
       rgba(0,0,0,0.65) 100%), 
       url(${post.coverImageSrc}) no-repeat center center scroll`,
-    backgroundSize: 'cover !important;',
+    backgroundSize: 'cover !important',
   };
 
   const featuredTextStyle = {

@@ -1,9 +1,18 @@
+import imageUrlBuilder from '@sanity/image-url';
+import { ImageUrlBuilder } from '@sanity/image-url/lib/types/builder';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import client from './sanity';
+
+// https://www.sanity.io/docs/image-url
+const builder = imageUrlBuilder(client);
+export const urlFor = (source: SanityImageSource): ImageUrlBuilder =>
+  builder.image(source);
 
 const postFields = `
   _id,
   name,
   title,
+  'body': body,
   'date': publishedAt,
   excerpt,
   'slug': slug.current,

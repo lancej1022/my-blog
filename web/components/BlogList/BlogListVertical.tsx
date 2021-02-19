@@ -1,14 +1,23 @@
 import { Grid } from '@material-ui/core';
+
+import Post from 'types/post';
 import { BlogCard } from 'components/BlogCard';
 
-export const BlogListVertical = ({ blogList = [1, 2] }) => {
+import styles from './BlogList.module.scss';
+
+type BlogListProps = {
+  posts: Post[];
+};
+
+export const BlogListVertical = ({ posts = [] }: BlogListProps) => {
+  // console.log(JSON.stringify(posts));
   return (
     <>
-      <Grid container spacing={3}>
-        {blogList.map((i) => {
+      <Grid container spacing={6}>
+        {posts.map((p) => {
           return (
-            <Grid item xs={12}>
-              <BlogCard />
+            <Grid className={styles['blog-card-container']} key={p._id} item xs={12}>
+              <BlogCard blogPost={p} />
             </Grid>
           );
         })}
