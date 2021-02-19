@@ -1,0 +1,32 @@
+.post-container {
+  height: 300px;
+}
+
+.slanty-boi {
+  transform: skew(-13deg) rotate(-5deg) translateY(-2rem);
+  margin: auto;
+
+  &__featured-wrapper {
+    max-width: fit-content;
+  }
+
+  &__featured {
+    margin: 0 0 0 1rem;
+    color: #fff;
+    background-color: #14589d;
+    padding: 0.3em;
+    transform: translateY(5px);
+  }
+
+  &__title {
+    color: #fff;
+    background-color: #81bbf4;
+    padding: 0.3em;
+    text-shadow: 3px 3px #14589d;
+    // max-width: max-content;
+  }
+}
+
+.button-container {
+  padding-right: 3rem;
+}

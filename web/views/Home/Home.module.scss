@@ -1,0 +1,19 @@
+.home__hero-container {
+  // background: linear-gradient(
+  //   0deg,
+  //   hsla(200deg, 100%, 85%, 0),
+  //   hsla(200deg, 100%, 85%, 0.1)
+  // );
+  // TODO: this class really needs to be within PageLayout folder
+  background-color: gray;
+  transition: --color-homepage-light 350ms linear 0s,
+    --color-homepage-dark 350ms linear 0s;
+}
+
+.black {
+  color: black;
+}
+
+.posts-container {
+  padding: 2rem 0;
+}
