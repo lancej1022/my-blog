@@ -10,7 +10,6 @@ import Typography from '@material-ui/core/Typography';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import { parseISO, format } from 'date-fns';
 
-import DateFormatter from 'components/date-formatter';
 import { useMemo } from 'react';
 import { urlFor } from 'lib/api';
 import PostType from 'types/post';
@@ -29,7 +28,6 @@ export function BlogCard({ blogPost }: BlogCardProps) {
   const classes = useStyles();
 
   const postPreview = useMemo(() => {
-    console.log(JSON.stringify(blogPost));
     const arr = blogPost.body[0].children[0].text.split(' ');
     const preview = arr.slice(0, 25).join(' ') + ' ...';
     return preview;

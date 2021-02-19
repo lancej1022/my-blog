@@ -2,49 +2,51 @@ import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import { Container } from '@material-ui/core';
 
-import PostBody from '../../components/post-body';
-
-import PostHeader from '../../components/post-header';
+import PostBody from 'components/post-body';
 import { PageLayout } from 'components/PageLayout';
+import PostTitle from 'components/post-title';
 import { getPostBySlug, getAllPosts } from 'lib/api';
-import PostTitle from '../../components/post-title';
 
 import PostType from 'types/post';
+import { BlogPost } from 'views/BlogPost';
 
 type Props = {
-  post: PostType;
-  morePosts: PostType[];
+  blogPost: PostType;
   preview?: boolean;
 };
 
-const Post = ({ post, morePosts, preview }: Props) => {
+const Post = ({ blogPost }: Props) => {
   const router = useRouter();
+  console.log(JSON.stringify(blogPost));
 
-  if (!router.isFallback && !post?.slug) {
+  if (!router.isFallback && !blogPost?.slug) {
     return <ErrorPage statusCode={404} />;
   }
 
   return (
-    <PageLayout preview={preview}>
-      <Container>
-        <Header />
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article className="mb-32">
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              />
-              <PostBody content={post.content} />
-            </article>
-          </>
-        )}
-      </Container>
-    </PageLayout>
+    <>
+      <BlogPost blogPost={blogPost} />
+    </>
+    // <PageLayout>
+    //   <Container>
+    //     <Header />
+    //     {router.isFallback ? (
+    //       <PostTitle>Loading…</PostTitle>
+    //     ) : (
+    //       <>
+    //         <article className="mb-32">
+    //           {/* <PostHeader
+    //             title={blogPost.title}
+    //             coverImage={blogPost.coverImage}
+    //             date={blogPost.date}
+    //             author={blogPost.author}
+    //           /> */}
+    //           <PostBody content={blogPost.content} />
+    //         </article>
+    //       </>
+    //     )}
+    //   </Container>
+    // </PageLayout>
   );
 };
 
@@ -66,11 +68,11 @@ export async function getStaticProps({ params = { slug: '' } }: Params) {
     'ogImage',
     'coverImage',
   ]);
-  console.log(`post: ${JSON.stringify(post)}`);
+  // console.log(`post: ${JSON.stringify(post)}`);
 
   return {
     props: {
-      post: { ...post },
+      blogPost: { ...post },
     },
     revalidate: 1,
   };

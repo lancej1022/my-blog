@@ -10,7 +10,6 @@ type BlogListProps = {
 };
 
 export const BlogListVertical = ({ posts = [] }: BlogListProps) => {
-  // console.log(JSON.stringify(posts));
   return (
     <>
       <Grid container spacing={6}>

@@ -1,25 +1,22 @@
 import Link from 'next/link';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
-import styles from './PostHero.module.scss';
 
-const defaultPost = {
-  coverImageSrc: '/assets/unsplash-asoggetti.jpg',
-  title: 'Super crazy blog post title',
-  date: Date.now(),
-  body:
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt tempora eos doloribus natus? Impedit eligendi ea cupiditate delectus sit maiores.',
-  slug: 'super-crazy-blog-post',
+import PostType from 'types/post';
+import styles from './PostHero.module.scss';
+import { urlFor } from 'lib/api';
+
+type PostHeroProps = {
+  blogPost: PostType;
 };
 
-// see https://reacttraining.com/blog/ -- they dont use a dynamic cover image but overall this is the look to go for
-export function PostHero({ post = defaultPost }) {
+export function PostHero({ blogPost }: PostHeroProps) {
   const backgroundImgStyle = {
     background: `radial-gradient(
       ellipse at center, 
       rgba(0,0,0,0) 0%, 
       rgba(0,0,0,0) 0%, 
       rgba(0,0,0,0.65) 100%), 
-      url(${post.coverImageSrc}) no-repeat center center scroll`,
+      url(${urlFor(blogPost.coverImage).url()}) no-repeat center center scroll`,
     backgroundSize: 'cover !important',
   };
 
@@ -48,11 +45,11 @@ export function PostHero({ post = defaultPost }) {
             </Typography>
           </Grid>
           <Typography className={styles['slanty-boi__title']} variant="h2" component="h3">
-            {post.title}
+            {blogPost.title}
           </Typography>
         </Grid>
         <Grid justify="flex-end" container className={styles['button-container']}>
-          <Link href={`/posts/${post.slug}`} passHref>
+          <Link href={`/posts/${blogPost.slug}`} passHref>
             <Button size="large" color="primary" variant="contained">
               Read Post
             </Button>

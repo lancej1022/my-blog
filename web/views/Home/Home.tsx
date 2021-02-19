@@ -16,10 +16,10 @@ export const Home = ({ posts }: HomeProps) => {
   return (
     <>
       <PageLayout title="Home page of Lance Jeffers">
-        <PostHero />
+        <PostHero blogPost={posts[0]} />
         <Container maxWidth="md" className={styles['posts-container']}>
           <Typography variant="h2" component="h1" align="center" gutterBottom>
-            Blog Posts
+            Other Blog Posts
           </Typography>
           <BlogListVertical posts={posts.slice(1)} />
         </Container>
