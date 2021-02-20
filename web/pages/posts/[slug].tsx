@@ -17,8 +17,9 @@ type Props = {
 
 const Post = ({ blogPost }: Props) => {
   const router = useRouter();
-  console.log(JSON.stringify(blogPost));
+  // console.log(JSON.stringify(blogPost));
 
+  // if we are not on the fallback page and we dont have a blog slug, display an error page
   if (!router.isFallback && !blogPost?.slug) {
     return <ErrorPage statusCode={404} />;
   }

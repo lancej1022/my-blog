@@ -38,7 +38,7 @@ export const NavigationBar = (): JSX.Element => {
     <AppBar className={classes.appBar} color="default" elevation={0} position="static">
       <Toolbar className={classes.toolbar}>
         <div className={classes.toolbarTitle}>
-          <NextLink href="/login" passHref>
+          <NextLink href="/" passHref>
             <Button className={`classes.link`} color="primary" variant="text">
               Lance Jeffers
             </Button>
