@@ -19,10 +19,10 @@ export function BlogPost({ blogPost }: BlogPostProps) {
           height={450}
           width={1920}
         />
-        <Typography align="center" component="h1" variant="h2">
-          {blogPost.title}
-        </Typography>
-        <Container maxWidth="sm">
+        <Container maxWidth="lg">
+          <Typography gutterBottom align="center" component="h1" variant="h2">
+            {blogPost.title}
+          </Typography>
           <BlogContent content={blogPost.body} />
         </Container>
       </PageLayout>
