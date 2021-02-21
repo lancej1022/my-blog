@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Box from '@material-ui/core/Box';
@@ -59,14 +60,16 @@ export function BlogCard({ blogPost }: BlogCardProps) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button
-          size="medium"
-          color="primary"
-          variant="outlined"
-          endIcon={<ArrowRightAltIcon />}
-        >
-          Read more
-        </Button>
+        <Link href={`/posts/${blogPost.slug}`} passHref>
+          <Button
+            size="medium"
+            color="primary"
+            variant="outlined"
+            endIcon={<ArrowRightAltIcon />}
+          >
+            Read more
+          </Button>
+        </Link>
       </CardActions>
     </Card>
   );
