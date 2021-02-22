@@ -1,10 +1,23 @@
 import BlockContent from '@sanity/block-content-to-react';
 import { Language } from 'prism-react-renderer';
-import { Typography, Container } from '@material-ui/core';
+import { Typography, Container, makeStyles } from '@material-ui/core';
 
 import { CodeHighlight } from 'components/CodeHighlight';
 import { urlFor } from 'lib/api';
 import styles from './BlogContent.module.scss';
+
+const useStyles = makeStyles({
+  headingMargin: {
+    marginBottom: '1.8rem',
+    marginTop: '.4rem',
+  },
+  textMargin: {
+    marginBottom: '1.4rem',
+  },
+  bodyText: {
+    fontSize: '1.2rem',
+  },
+});
 
 type CodeProps = {
   node: {
@@ -26,35 +39,38 @@ const serializers = {
   types: {
     // Render code blocks
     code: ({ node: { language, filename, code } }: CodeProps) => (
-      <div className={styles['code-width-wrapper']}>
+      <>
         <CodeHighlight code={code} language={language} />
         <br />
-      </div>
+      </>
     ),
     // Render text blocks
     block: (block) => {
-      // console.log(block);
       const style = block.node.style || 'normal';
+      const classes = useStyles();
       if (/^h\d$/.test(style)) {
         return (
-          <div className={styles['text-container']}>
-            <Typography
-              align="left"
-              variant={`h${Number(style[1]) + 1}`}
-              component={style}
-              gutterBottom
-            >
-              {block.children}
-            </Typography>
-          </div>
+          <Typography
+            align="left"
+            className={`${styles['text-width-wrapper']} ${classes.headingMargin}`}
+            variant={`h${Number(style[1]) + 1}`}
+            component={style}
+            gutterBottom
+          >
+            {block.children}
+          </Typography>
         );
       }
       if (style === 'normal' && block.children != '') {
         return (
-          <div className={styles['text-container']}>
-            <Typography variant="body1">{block.children}</Typography>
-            <br />
-          </div>
+          <>
+            <Typography
+              className={`${styles['text-width-wrapper']} ${classes.textMargin} ${classes.bodyText}`}
+              variant="body1"
+            >
+              {block.children}
+            </Typography>
+          </>
         );
       }
       return null;

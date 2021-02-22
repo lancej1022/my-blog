@@ -1,11 +1,4 @@
-.code-width-wrapper {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.text-container {
-  margin: 0 auto;
-  @media (min-width: 600px) {
-    max-width: 650px;
-  }
+.text-width-wrapper {
+  width: 100%;
+  max-width: 650px;
 }
