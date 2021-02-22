@@ -16,8 +16,15 @@ export function BlogPost({ blogPost }: BlogPostProps) {
     <>
       <PageLayout title={blogPost.title}>
         <NextImage
-          src={urlFor(blogPost.coverImage).url() || ''}
-          height={450}
+          src={
+            urlFor(blogPost.coverImage)
+              .height(400)
+              .width(1920)
+              .quality(100)
+              .fit('crop')
+              .url() || ''
+          }
+          height={400}
           width={1920}
         />
         <Container maxWidth="lg" component="article">

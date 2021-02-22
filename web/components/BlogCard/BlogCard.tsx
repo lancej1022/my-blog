@@ -42,7 +42,14 @@ export function BlogCard({ blogPost }: BlogCardProps) {
           component="img"
           alt={blogPost.coverImageAlt}
           height="150"
-          image={urlFor(blogPost.coverImage).url()}
+          image={
+            urlFor(blogPost.coverImage)
+              .height(150)
+              .width(800)
+              .quality(90)
+              .fit('crop')
+              .url() || ''
+          }
           title={blogPost.coverImageAlt}
         />
         <CardContent>

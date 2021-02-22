@@ -16,7 +16,12 @@ export function PostHero({ blogPost }: PostHeroProps) {
       rgba(0,0,0,0) 0%, 
       rgba(0,0,0,0) 0%, 
       rgba(0,0,0,0.65) 100%), 
-      url(${urlFor(blogPost.coverImage).url()}) no-repeat center center scroll`,
+      url(${urlFor(blogPost.coverImage)
+        .height(450)
+        .width(1920)
+        .quality(90)
+        .fit('crop')
+        .url()}) no-repeat center center scroll`,
     backgroundSize: 'cover !important',
   };
 
