@@ -7,6 +7,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule) => Rule.required().min(5).max(80),
     },
     {
       name: 'slug',
@@ -30,6 +31,28 @@ export default {
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: 'imagePosition',
+          title: 'Image Position',
+          type: 'string',
+          options: {
+            list: [
+              { title: 'Center', value: 'center' },
+              { title: 'Left', value: 'left' },
+              { title: 'Right', value: 'right' },
+            ],
+            layout: 'radio',
+            isHighlighted: true,
+          },
+        },
+        {
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'text',
+          options: { isHighlighted: true },
+        },
+      ],
     },
     {
       name: 'categories',

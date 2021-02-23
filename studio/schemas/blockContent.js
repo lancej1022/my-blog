@@ -59,7 +59,21 @@ export default {
     // as a block type.
     {
       type: 'image',
-      options: { hotspot: true },
+      fields: [
+        {
+          name: 'alt',
+          type: 'text',
+          title: 'Alt Text',
+          options: { isHighlighted: true },
+        },
+      ],
+      options: { hotspot: true }, // allows for hotspot cropping
+    },
+    {
+      type: 'code',
+      options: {
+        withFilename: true,
+      },
     },
   ],
 };
