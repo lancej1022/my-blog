@@ -13,16 +13,18 @@
   &__featured {
     margin: 0 0 0 1rem;
     color: #fff;
-    background-color: #14589d;
+    // background-color: #14589d;
+    background-color: rgb(52, 41, 105);
     padding: 0.3em;
     transform: translateY(5px);
   }
 
   &__title {
     color: #fff;
-    background-color: #81bbf4;
+    // background-color: #81bbf4;
+    background-color: #556cd6;
     padding: 0.3em;
-    text-shadow: 3px 3px #14589d;
+    text-shadow: 3px 3px rgb(52, 41, 105);
   }
 }
 

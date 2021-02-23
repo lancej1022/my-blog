@@ -2,9 +2,7 @@ import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import { Container } from '@material-ui/core';
 
-import PostBody from 'components/post-body';
 import { PageLayout } from 'components/PageLayout';
-import PostTitle from 'components/post-title';
 import { getPostBySlug, getAllPosts } from 'lib/api';
 
 import PostType from 'types/post';

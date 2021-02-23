@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -26,18 +27,23 @@ type BlogCardProps = {
 };
 
 export function BlogCard({ blogPost }: BlogCardProps) {
+  const router = useRouter();
   const classes = useStyles();
 
-  const postPreview = useMemo(() => {
+  const textPreview = useMemo(() => {
     const arr = blogPost.body[0].children[0].text.split(' ');
     const preview = arr.slice(0, 25).join(' ') + ' ...';
     return preview;
   }, [blogPost]);
 
+  const handleCardClick = () => {
+    router.push(`posts/${blogPost?.slug}`);
+  };
+
   // TODO: this entire card should be clickable/submittable (a11y + UX)
   return (
     <Card className={classes.root} variant="outlined" component="article">
-      <CardActionArea>
+      <CardActionArea onClick={handleCardClick}>
         <CardMedia
           component="img"
           alt={blogPost.coverImageAlt}
@@ -61,7 +67,7 @@ export function BlogCard({ blogPost }: BlogCardProps) {
           </Typography>
           <Box fontStyle="italic">
             <Typography variant="body1" color="textSecondary" component="p">
-              {postPreview}
+              {textPreview}
             </Typography>
           </Box>
         </CardContent>
