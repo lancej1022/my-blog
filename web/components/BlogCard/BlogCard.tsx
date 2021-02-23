@@ -14,11 +14,15 @@ import { parseISO, format } from 'date-fns';
 
 import { useMemo } from 'react';
 import { urlFor } from 'lib/api';
+import { humanReadableEstimate } from 'utils';
 import PostType from 'types/post';
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 800,
+  },
+  timeText: {
+    marginRight: '3rem',
   },
 });
 
@@ -59,11 +63,14 @@ export function BlogCard({ blogPost }: BlogCardProps) {
           title={blogPost.coverImageAlt}
         />
         <CardContent>
-          <Typography variant="h4" component="h3">
+          <Typography gutterBottom variant="h4" component="h3">
             {blogPost.title}
           </Typography>
-          <Typography component="time" variant="body2">
+          <Typography className={classes.timeText} component="time" variant="body1">
             {format(parseISO(blogPost.date), 'LLLL d, yyyy')}
+          </Typography>
+          <Typography variant="body1" component="span">
+            Estimated read time: {humanReadableEstimate(blogPost)}
           </Typography>
           <Box fontStyle="italic">
             <Typography variant="body1" color="textSecondary" component="p">

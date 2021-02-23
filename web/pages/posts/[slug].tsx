@@ -15,7 +15,6 @@ type Props = {
 
 const Post = ({ blogPost }: Props) => {
   const router = useRouter();
-  // console.log(JSON.stringify(blogPost));
 
   // if we are not on the fallback page and we dont have a blog slug, display an error page
   if (!router.isFallback && !blogPost?.slug) {
@@ -26,26 +25,6 @@ const Post = ({ blogPost }: Props) => {
     <>
       <BlogPost blogPost={blogPost} />
     </>
-    // <PageLayout>
-    //   <Container>
-    //     <Header />
-    //     {router.isFallback ? (
-    //       <PostTitle>Loading…</PostTitle>
-    //     ) : (
-    //       <>
-    //         <article className="mb-32">
-    //           {/* <PostHeader
-    //             title={blogPost.title}
-    //             coverImage={blogPost.coverImage}
-    //             date={blogPost.date}
-    //             author={blogPost.author}
-    //           /> */}
-    //           <PostBody content={blogPost.content} />
-    //         </article>
-    //       </>
-    //     )}
-    //   </Container>
-    // </PageLayout>
   );
 };
 
@@ -67,7 +46,6 @@ export async function getStaticProps({ params = { slug: '' } }: Params) {
     'ogImage',
     'coverImage',
   ]);
-  // console.log(`post: ${JSON.stringify(post)}`);
 
   return {
     props: {

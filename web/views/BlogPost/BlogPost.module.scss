@@ -1,7 +1,21 @@
+.hero-image {
+  margin-bottom: 1.5rem;
+}
+
 .text-container > div {
   max-width: 700px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.article-header {
+  margin: 0 auto;
+  max-width: 650px;
+  margin-bottom: 2rem;
+
+  time {
+    margin-right: 2rem;
+  }
 }
