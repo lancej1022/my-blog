@@ -1,5 +1,10 @@
 .post-container {
-  height: 350px;
+  min-height: min-content;
+  height: 50vh;
+
+  @media screen and (min-wdith: 600px) {
+    height: 350px;
+  }
 }
 
 .slanty-boi {
@@ -13,7 +18,6 @@
   &__featured {
     margin: 0 0 0 1rem;
     color: #fff;
-    // background-color: #14589d;
     background-color: rgb(52, 41, 105);
     padding: 0.3em;
     transform: translateY(5px);
@@ -21,7 +25,6 @@
 
   &__title {
     color: #fff;
-    // background-color: #81bbf4;
     background-color: #556cd6;
     padding: 0.3em;
     text-shadow: 3px 3px rgb(52, 41, 105);

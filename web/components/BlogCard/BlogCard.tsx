@@ -35,7 +35,7 @@ export function BlogCard({ blogPost }: BlogCardProps) {
   const classes = useStyles();
 
   const textPreview = useMemo(() => {
-    const arr = blogPost.body[0].children[0].text.split(' ');
+    const arr = blogPost.content.split(' ');
     const preview = arr.slice(0, 25).join(' ') + ' ...';
     return preview;
   }, [blogPost]);

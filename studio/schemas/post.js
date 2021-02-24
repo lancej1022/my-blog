@@ -66,9 +66,9 @@ export default {
       type: 'datetime',
     },
     {
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      name: 'content',
+      title: 'Content',
+      type: 'markdown',
     },
   ],
 

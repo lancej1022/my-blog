@@ -19,15 +19,20 @@ export const CodeHighlight: React.FC<CodeHighlightProps> = ({ code, language }) 
         */}
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={`${className} ${styles['code-container']}`} style={style}>
-            {tokens.map((line, i) => (
+            {tokens.map((line, i) => {
+              // handles bug where an extra empty line was being added to the end of every code block
+              if (line.length === 1 && line[0].empty === true && i === tokens.length - 1)
+                return;
               // see https://github.com/FormidableLabs/prism-react-renderer#prop-getters
-              <div {...getLineProps({ line, key: i })} className={styles['line']}>
-                <div className={styles['line-number']}>{i + 1}</div>
-                {line.map((token, key) => (
-                  <span {...getTokenProps({ token, key })} />
-                ))}
-              </div>
-            ))}
+              return (
+                <div {...getLineProps({ line, key: i })} className={styles['line']}>
+                  <div className={styles['line-number']}>{i + 1}</div>
+                  {line.map((token, key) => (
+                    <span {...getTokenProps({ token, key })} />
+                  ))}
+                </div>
+              );
+            })}
           </pre>
         )}
       </Highlight>

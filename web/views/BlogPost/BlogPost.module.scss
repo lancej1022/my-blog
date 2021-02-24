@@ -2,12 +2,18 @@
   margin-bottom: 1.5rem;
 }
 
-.text-container > div {
+.text-container {
   max-width: 700px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  p > code {
+    background-color: rgb(214, 222, 235);
+    color: rgb(1, 22, 39);
+    padding: 1px 5px;
+  }
 }
 
 .article-header {

@@ -12,13 +12,24 @@ const postFields = `
   _id,
   name,
   title,
-  'body': body,
+  content,
   'date': publishedAt,
-  excerpt,
   'slug': slug.current,
   'coverImage': mainImage,
   'author': author->{name, 'picture': image.asset->url},
 `;
+// old version that used 'body'
+// const postFields = `
+//   _id,
+//   name,
+//   title,
+//   'body': body,
+//   'date': publishedAt,
+//   excerpt,
+//   'slug': slug.current,
+//   'coverImage': mainImage,
+//   'author': author->{name, 'picture': image.asset->url},
+// `;
 
 export async function getPostBySlug(slug: string = '', fields: string[] = []) {
   const results = await client.fetch(
@@ -43,6 +54,8 @@ export async function getAllPosts(fields: string[] = []) {
   const results = await client.fetch(
     `*[_type == "post"] | order(publishedAt desc) {${postFields}}`
   );
+
+  // console.log(results);
 
   return results;
 }

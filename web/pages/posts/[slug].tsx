@@ -1,20 +1,22 @@
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import { Container } from '@material-ui/core';
+import renderToString from 'next-mdx-remote/render-to-string';
+import hydrate from 'next-mdx-remote/hydrate';
 
-import { PageLayout } from 'components/PageLayout';
 import { getPostBySlug, getAllPosts } from 'lib/api';
-
 import PostType from 'types/post';
-import { BlogPost } from 'views/BlogPost';
+import { BlogPost, sanityComponents } from 'views/BlogPost';
 
 type Props = {
   blogPost: PostType;
   preview?: boolean;
 };
 
-const Post = ({ blogPost }: Props) => {
+// actual component that is rendered by [slug].tsx
+const Post = ({ blogPost, mdxSource }: Props) => {
   const router = useRouter();
+
+  const renderedContent = hydrate(mdxSource, { components: sanityComponents });
 
   // if we are not on the fallback page and we dont have a blog slug, display an error page
   if (!router.isFallback && !blogPost?.slug) {
@@ -23,7 +25,7 @@ const Post = ({ blogPost }: Props) => {
 
   return (
     <>
-      <BlogPost blogPost={blogPost} />
+      <BlogPost renderedContent={renderedContent} blogPost={blogPost} />
     </>
   );
 };
@@ -47,9 +49,14 @@ export async function getStaticProps({ params = { slug: '' } }: Params) {
     'coverImage',
   ]);
 
+  const mdxSource = await renderToString(post.content, {
+    components: sanityComponents,
+  });
+
   return {
     props: {
       blogPost: { ...post },
+      mdxSource,
     },
     revalidate: 1,
   };

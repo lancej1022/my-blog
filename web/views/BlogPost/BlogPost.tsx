@@ -4,7 +4,6 @@ import { Container, Typography } from '@material-ui/core';
 import { urlFor } from 'lib/api';
 import PostType from 'types/post';
 import { PageLayout } from 'components/PageLayout';
-import { BlogContent } from 'components/BlogContent';
 
 import styles from './BlogPost.module.scss';
 import { ArticleHeader } from './components/ArticleHeader';
@@ -13,7 +12,8 @@ type BlogPostProps = {
   blogPost: PostType;
 };
 
-export function BlogPost({ blogPost }: BlogPostProps) {
+export function BlogPost({ blogPost, renderedContent }: BlogPostProps) {
+  // console.log(`inside BlogPost content --> ${JSON.stringify(content)}`);
   return (
     <>
       <PageLayout title={blogPost.title}>
@@ -40,9 +40,7 @@ export function BlogPost({ blogPost }: BlogPostProps) {
             <ArticleHeader blogPost={blogPost} />
           </section>
 
-          <div className={styles['text-container']}>
-            <BlogContent content={blogPost.body} />
-          </div>
+          <div className={styles['text-container']}>{renderedContent}</div>
         </Container>
       </PageLayout>
     </>
