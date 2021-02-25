@@ -69,6 +69,9 @@ export const NavigationBar = (): JSX.Element => {
             <MenuIcon />
           </IconButton>
           <Drawer open={drawerOpen} onClose={handleDrawerOpen}>
+            <MaterialLink component={NextLink} href="/posts">
+              <MenuItem>Blog</MenuItem>
+            </MaterialLink>
             <MaterialLink href="https://www.linkedin.com/in/lance-jeffers">
               <MenuItem>LinkedIn</MenuItem>
             </MaterialLink>
