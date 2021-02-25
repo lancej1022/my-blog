@@ -13,7 +13,6 @@ type BlogPostProps = {
 };
 
 export function BlogPost({ blogPost, renderedContent }: BlogPostProps) {
-  // console.log(`inside BlogPost content --> ${JSON.stringify(content)}`);
   return (
     <>
       <PageLayout title={blogPost.title}>
@@ -32,7 +31,7 @@ export function BlogPost({ blogPost, renderedContent }: BlogPostProps) {
           />
         </div>
         <Container maxWidth="lg" component="article">
-          <Typography gutterBottom align="center" component="h1" variant="h2">
+          <Typography gutterBottom align="center" component="h1" variant="h3">
             {blogPost.title}
           </Typography>
 

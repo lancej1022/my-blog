@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import { urlFor } from 'lib/api';
 import PostType from 'types/post';
 import { humanReadableEstimate } from 'utils';
+import styles from './blogPostComponents.module.scss';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,7 +50,7 @@ export function ArticleHeader({ blogPost }: CardHeaderProps) {
           </Typography>
         }
         subheader={
-          <span>
+          <span className={styles['date-wrapper']}>
             <Typography component="time" variant="body1">
               {format(parseISO(blogPost.date), 'LLLL d, yyyy')}
             </Typography>

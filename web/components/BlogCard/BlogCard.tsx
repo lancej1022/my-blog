@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { makeStyles } from '@material-ui/core/styles';
@@ -12,10 +13,10 @@ import Typography from '@material-ui/core/Typography';
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import { parseISO, format } from 'date-fns';
 
-import { useMemo } from 'react';
 import { urlFor } from 'lib/api';
 import { humanReadableEstimate } from 'utils';
 import PostType from 'types/post';
+import styles from './BlogCard.module.scss';
 
 const useStyles = makeStyles({
   root: {
@@ -44,7 +45,6 @@ export function BlogCard({ blogPost }: BlogCardProps) {
     router.push(`posts/${blogPost?.slug}`);
   };
 
-  // TODO: this entire card should be clickable/submittable (a11y + UX)
   return (
     <Card className={classes.root} variant="outlined" component="article">
       <CardActionArea onClick={handleCardClick}>
@@ -66,12 +66,14 @@ export function BlogCard({ blogPost }: BlogCardProps) {
           <Typography gutterBottom variant="h4" component="h3">
             {blogPost.title}
           </Typography>
-          <Typography className={classes.timeText} component="time" variant="body1">
-            {format(parseISO(blogPost.date), 'LLLL d, yyyy')}
-          </Typography>
-          <Typography variant="body1" component="span">
-            Estimated read time: {humanReadableEstimate(blogPost)}
-          </Typography>
+          <span className={styles['date-wrapper']}>
+            <Typography className={classes.timeText} component="time" variant="body1">
+              {format(parseISO(blogPost.date), 'LLLL d, yyyy')}
+            </Typography>
+            <Typography variant="body1" component="span">
+              Estimated read time: {humanReadableEstimate(blogPost)}
+            </Typography>
+          </span>
           <Box fontStyle="italic">
             <Typography variant="body1" color="textSecondary" component="p">
               {textPreview}

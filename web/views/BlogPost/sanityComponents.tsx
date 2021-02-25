@@ -15,8 +15,9 @@ export const sanityComponents = {
   h1: ({ children }) => (
     <Typography
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
-      variant="h3"
+      variant="h4"
       component="h1"
+      style={{ fontWeight: 500 }}
     >
       {children}
     </Typography>
@@ -24,8 +25,9 @@ export const sanityComponents = {
   h2: ({ children }) => (
     <Typography
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
-      variant="h3"
+      variant="h5"
       component="h2"
+      style={{ fontWeight: 500 }}
     >
       {children}
     </Typography>
@@ -33,8 +35,9 @@ export const sanityComponents = {
   h3: ({ children }) => (
     <Typography
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
-      variant="h4"
+      variant="h6"
       component="h3"
+      style={{ fontWeight: 500 }}
     >
       {children}
     </Typography>
@@ -42,8 +45,9 @@ export const sanityComponents = {
   h4: ({ children }) => (
     <Typography
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
-      variant="h5"
+      variant="h6"
       component="h4"
+      style={{ fontWeight: 500 }}
     >
       {children}
     </Typography>
@@ -53,6 +57,7 @@ export const sanityComponents = {
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="h6"
       component="h5"
+      style={{ fontWeight: 500 }}
     >
       {children}
     </Typography>
@@ -62,6 +67,7 @@ export const sanityComponents = {
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="h6"
       component="h6"
+      style={{ fontWeight: 500 }}
     >
       {children}
     </Typography>

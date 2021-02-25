@@ -10,9 +10,13 @@
   align-items: center;
 
   p > code {
-    background-color: rgb(214, 222, 235);
-    color: rgb(1, 22, 39);
+    background-color: rgb(222, 222, 222);
+    color: #000;
     padding: 1px 5px;
+  }
+
+  pre {
+    margin: 0 0 0 0;
   }
 }
 

@@ -1,15 +1,13 @@
 .post-container {
-  min-height: min-content;
-  height: 50vh;
+  height: 45vh;
 
-  @media screen and (min-wdith: 600px) {
-    height: 350px;
+  @media (min-width: 600px) {
+    height: 35vh;
   }
 }
 
 .slanty-boi {
   transform: skew(-13deg) rotate(-5deg) translateY(-2rem);
-  margin: auto;
 
   &__featured-wrapper {
     max-width: fit-content;
@@ -27,6 +25,7 @@
     color: #fff;
     background-color: #556cd6;
     padding: 0.3em;
+    margin: 0 auto;
     text-shadow: 3px 3px rgb(52, 41, 105);
   }
 }

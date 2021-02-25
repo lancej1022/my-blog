@@ -34,6 +34,7 @@ export function PostHero({ blogPost }: PostHeroProps) {
       container
       alignContent="center"
       style={backgroundImgStyle}
+      // TODO: convert this class to css-in-js so you can dynamically size height based on inner content (use CSS calc()?)
       className={styles['post-container']}
       component="section"
     >

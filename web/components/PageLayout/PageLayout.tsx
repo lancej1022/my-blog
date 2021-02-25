@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { Copyright } from './Copyright';
 import { NavigationBar } from 'components/NavigationBar';

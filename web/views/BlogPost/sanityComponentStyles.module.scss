@@ -13,9 +13,13 @@
 }
 
 .body-text {
-  font-size: 1.2rem !important;
+  font-size: 1.1rem !important;
 }
 
 .code-wrapper {
   width: 100%;
+
+  & > pre {
+    margin-bottom: 1.4rem;
+  }
 }

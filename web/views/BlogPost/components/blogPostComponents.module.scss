@@ -1,0 +1,6 @@
+.date-wrapper {
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
