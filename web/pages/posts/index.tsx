@@ -1,20 +1,20 @@
 import { getAllPosts } from 'lib/api';
 import Post from 'types/post';
-import { Home } from 'views/Home';
+import { PostsView } from 'views/AllPostsPage';
 
 type Props = {
   allPosts: Post[];
 };
 
-const Index = ({ allPosts }: Props) => {
+const AllPosts = ({ allPosts }: Props) => {
   return (
     <>
-      <Home posts={allPosts} />
+      <PostsView allPosts={allPosts} />
     </>
   );
 };
 
-export default Index;
+export default AllPosts;
 
 export const getStaticProps = async () => {
   const allPosts = await getAllPosts([
