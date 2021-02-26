@@ -1,15 +1,20 @@
 import Link from 'next/link';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
 
+import { urlFor } from 'lib/api';
+import useResizeObserver from 'hooks/useResizeObserver';
 import PostType from 'types/post';
 import styles from './PostHero.module.scss';
-import { urlFor } from 'lib/api';
 
 type PostHeroProps = {
   blogPost: PostType;
 };
 
 export function PostHero({ blogPost }: PostHeroProps) {
+  // TODO: this is cool, but is it necessary? Can we just `useRef()` and grab the height of the slantyBoi?
+  const { ref, height: slantyHeight } = useResizeObserver<HTMLDivElement>();
+
+  // TODO: move this into a useStyles hook instead of cluttering component logic
   const backgroundImgStyle = {
     background: `radial-gradient(
       ellipse at center, 
@@ -23,6 +28,7 @@ export function PostHero({ blogPost }: PostHeroProps) {
         .fit('crop')
         .url()}) no-repeat center center scroll`,
     backgroundSize: 'cover !important',
+    height: slantyHeight + 130,
   };
 
   const featuredTextStyle = {
@@ -30,16 +36,9 @@ export function PostHero({ blogPost }: PostHeroProps) {
   };
 
   return (
-    <Grid
-      container
-      alignContent="center"
-      style={backgroundImgStyle}
-      // TODO: convert this class to css-in-js so you can dynamically size height based on inner content (use CSS calc()?)
-      className={styles['post-container']}
-      component="section"
-    >
+    <Grid container alignContent="center" style={backgroundImgStyle} component="section">
       <Container maxWidth="md">
-        <Grid className={styles['slanty-boi']}>
+        <Grid ref={ref} className={styles['slanty-boi']}>
           <Grid item className={styles['slanty-boi__featured-wrapper']}>
             <Typography
               variant="h5"

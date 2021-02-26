@@ -1,11 +1,3 @@
-.post-container {
-  height: 45vh;
-
-  @media (min-width: 600px) {
-    height: 35vh;
-  }
-}
-
 .slanty-boi {
   transform: skew(-13deg) rotate(-5deg) translateY(-2rem);
 
@@ -16,17 +8,17 @@
   &__featured {
     margin: 0 0 0 1rem;
     color: #fff;
-    background-color: rgb(52, 41, 105);
+    background-color: #14589d;
     padding: 0.3em;
     transform: translateY(5px);
   }
 
   &__title {
     color: #fff;
-    background-color: #556cd6;
+    background-color: #81bbf4;
     padding: 0.3em;
     margin: 0 auto;
-    text-shadow: 3px 3px rgb(52, 41, 105);
+    text-shadow: 3px 3px #14589d;
   }
 }
 
