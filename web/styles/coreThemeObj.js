@@ -6,7 +6,8 @@ import { red } from '@material-ui/core/colors';
 export const coreThemeObj = {
   palette: {
     primary: {
-      main: '#14589d',
+      // main: '#14589d',
+      main: '#fff',
       // main: '--color-homepage-bg', TODO: update this to CSS Variables once MUI supports them
     },
     secondary: {
@@ -16,7 +17,8 @@ export const coreThemeObj = {
       main: red.A400,
     },
     background: {
-      default: '#fff',
+      // default: '#fff',
+      default: '#111',
     },
   },
 };

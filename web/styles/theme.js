@@ -18,5 +18,3 @@ export const darkTheme = createMuiTheme({
     type: 'dark',
   },
 });
-
-export default lightTheme;

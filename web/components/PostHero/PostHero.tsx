@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
 
 import { urlFor } from 'lib/api';
-import useResizeObserver from 'hooks/useResizeObserver';
+import { useResizeObserver } from 'hooks/useResizeObserver';
 import PostType from 'types/post';
 import styles from './PostHero.module.scss';
 
@@ -28,7 +28,7 @@ export function PostHero({ blogPost }: PostHeroProps) {
         .fit('crop')
         .url()}) no-repeat center center scroll`,
     backgroundSize: 'cover !important',
-    height: slantyHeight + 130,
+    height: slantyHeight + 130 || 400,
   };
 
   const featuredTextStyle = {

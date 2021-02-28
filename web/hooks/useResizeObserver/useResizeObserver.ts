@@ -189,4 +189,4 @@ function useResizeObserver<T extends HTMLElement>(
   );
 }
 
-export default useResizeObserver;
+export { useResizeObserver };

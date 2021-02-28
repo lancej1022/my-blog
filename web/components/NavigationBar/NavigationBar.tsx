@@ -15,8 +15,10 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import MenuItem from '@material-ui/core/MenuItem';
 import MaterialLink from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 import { Toggle } from 'components/Toggle';
+import { Switch } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -115,6 +117,11 @@ export const NavigationBar = (): JSX.Element => {
           >
             <GitHubIcon />
           </IconButton>
+          {/* <FormControlLabel
+            control={<Switch onClick={toggleDarkMode} />}
+            label="Toggle dark mode"
+            checked={Boolean(isDark)}
+          /> */}
         </Box>
       </Toolbar>
     </AppBar>

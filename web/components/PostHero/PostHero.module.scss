@@ -7,18 +7,18 @@
 
   &__featured {
     margin: 0 0 0 1rem;
-    color: #fff;
-    background-color: #14589d;
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #fff;
     padding: 0.3em;
     transform: translateY(5px);
   }
 
   &__title {
     color: #fff;
-    background-color: #81bbf4;
+    background-color: rgba(0, 0, 0, 0.87);
     padding: 0.3em;
     margin: 0 auto;
-    text-shadow: 3px 3px #14589d;
+    text-shadow: 3px 3px #4d4d4d;
   }
 }
 
