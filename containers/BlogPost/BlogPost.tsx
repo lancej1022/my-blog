@@ -10,6 +10,7 @@ import { ArticleHeader } from './components/ArticleHeader';
 
 type BlogPostProps = {
   blogPost: PostType;
+  renderedContent: any;
 };
 
 export function BlogPost({ blogPost, renderedContent }: BlogPostProps) {

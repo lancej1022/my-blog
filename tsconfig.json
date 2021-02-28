@@ -17,6 +17,6 @@
     "strict": true,
     "target": "es6"
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "studio"],
   "include": ["next-env.d.ts", "**/*.js", "**/*.ts", "**/*.tsx"]
 }

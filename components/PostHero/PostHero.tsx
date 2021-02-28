@@ -12,7 +12,7 @@ type PostHeroProps = {
 
 export function PostHero({ blogPost }: PostHeroProps) {
   // TODO: this is cool, but is it necessary? Can we just `useRef()` and grab the height of the slantyBoi?
-  const { ref, height: slantyHeight } = useResizeObserver<HTMLDivElement>();
+  const { ref, height: slantyHeight = 270 } = useResizeObserver<HTMLDivElement>();
 
   // TODO: move this into a useStyles hook instead of cluttering component logic
   const backgroundImgStyle = {
@@ -28,7 +28,7 @@ export function PostHero({ blogPost }: PostHeroProps) {
         .fit('crop')
         .url()}) no-repeat center center scroll`,
     backgroundSize: 'cover !important',
-    height: slantyHeight + 130 || 400,
+    height: slantyHeight + 130,
   };
 
   const featuredTextStyle = {

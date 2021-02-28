@@ -6,13 +6,13 @@ import styles from './sanityComponentStyles.module.scss';
 // list of components to pass into next-mdx-remote which will replace the interpreted MDX elements
 export const sanityComponents = {
   // Render code blocks
-  code: ({ children }) => (
+  code: ({ children }: any) => (
     <>
       <CodeHighlight code={children} language="javascript" />
     </>
   ),
-  pre: ({ children }) => <pre className={styles['code-wrapper']}>{children}</pre>,
-  h1: ({ children }) => (
+  pre: ({ children }: any) => <pre className={styles['code-wrapper']}>{children}</pre>,
+  h1: ({ children }: any) => (
     <Typography
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="h4"
@@ -23,7 +23,7 @@ export const sanityComponents = {
       {children}
     </Typography>
   ),
-  h2: ({ children }) => (
+  h2: ({ children }: any) => (
     <Typography
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="h5"
@@ -34,7 +34,7 @@ export const sanityComponents = {
       {children}
     </Typography>
   ),
-  h3: ({ children }) => (
+  h3: ({ children }: any) => (
     <Typography
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="h6"
@@ -45,7 +45,7 @@ export const sanityComponents = {
       {children}
     </Typography>
   ),
-  h4: ({ children }) => (
+  h4: ({ children }: any) => (
     <Typography
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="h6"
@@ -56,7 +56,7 @@ export const sanityComponents = {
       {children}
     </Typography>
   ),
-  h5: ({ children }) => (
+  h5: ({ children }: any) => (
     <Typography
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="h6"
@@ -67,7 +67,7 @@ export const sanityComponents = {
       {children}
     </Typography>
   ),
-  h6: ({ children }) => (
+  h6: ({ children }: any) => (
     <Typography
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="h6"
@@ -78,7 +78,7 @@ export const sanityComponents = {
       {children}
     </Typography>
   ),
-  p: ({ children }) => (
+  p: ({ children }: any) => (
     <Typography
       className={`${styles['body-text']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="body1"

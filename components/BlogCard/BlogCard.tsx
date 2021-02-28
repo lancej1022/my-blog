@@ -50,7 +50,9 @@ export function BlogCard({ blogPost }: BlogCardProps) {
       <CardActionArea onClick={handleCardClick}>
         <CardMedia
           component="img"
-          alt={blogPost.coverImageAlt}
+          // TODO: start using alt text on images
+          // alt={blogPost.coverImageAlt}
+          // title={blogPost.coverImageAlt}
           height="150"
           image={
             urlFor(blogPost.coverImage)
@@ -60,7 +62,6 @@ export function BlogCard({ blogPost }: BlogCardProps) {
               .fit('crop')
               .url() || ''
           }
-          title={blogPost.coverImageAlt}
         />
         <CardContent>
           <Typography gutterBottom variant="h4" component="h3">
