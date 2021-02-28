@@ -1,0 +1,40 @@
+.hero-image {
+  margin-bottom: 1.5rem;
+}
+
+.text-container {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p > code {
+    background-color: rgb(1, 22, 39);
+    color: rgb(173, 219, 103);
+    // OLD LIGHT MODE STYLES:
+    // background-color: rgb(222, 222, 222);
+    // color: #000;
+    padding: 1px 5px;
+    border: 1px solid #505050;
+    border-radius: 5px;
+  }
+
+  pre {
+    margin: 0 0 0 0;
+  }
+
+  ::marker {
+    font-size: 1.1rem;
+  }
+}
+
+.article-header {
+  margin: 0 auto;
+  max-width: 650px;
+  margin-bottom: 2rem;
+
+  time {
+    margin-right: 2rem;
+  }
+}

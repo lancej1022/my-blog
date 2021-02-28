@@ -1,0 +1,29 @@
+.slanty-boi {
+  transform: skew(-13deg) rotate(-5deg) translateY(-2rem);
+
+  &__featured-wrapper {
+    max-width: fit-content;
+  }
+
+  &__featured {
+    margin: 0 0 0 1rem;
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #fff;
+    padding: 0.3em;
+    transform: translateY(5px);
+  }
+
+  &__title {
+    color: #fff;
+    // background-color: rgba(0, 0, 0, 0.87);
+    background-color: #424242;
+    padding: 0.3em;
+    margin: 0 auto;
+    // text-shadow: 3px 3px #4d4d4d;
+    text-shadow: 3px 3px #111;
+  }
+}
+
+.button-container {
+  padding-right: 3rem;
+}

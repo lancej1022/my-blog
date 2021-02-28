@@ -1,1 +1,0 @@
-export { PostHero } from './PostHero';

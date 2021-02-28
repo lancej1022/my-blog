@@ -1,1 +1,0 @@
-export { BlogListVertical } from './BlogListVertical';

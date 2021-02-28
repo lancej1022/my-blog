@@ -8,8 +8,11 @@ node_modules
 # testing
 */coverage
 
+# sanity
+*/dist
+
 # next.js
-*/.next/
+.next/
 /out/
 
 # production

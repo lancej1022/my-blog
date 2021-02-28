@@ -1,0 +1,25 @@
+.code-container {
+  padding: 0.6rem;
+  width: 100%;
+  overflow: auto;
+  border: 1px solid #505050;
+  border-radius: 5px;
+}
+
+.line {
+  display: table-row;
+  font-size: 1rem;
+}
+
+.line-number {
+  display: none; // squeezes text on mobile, so remove line numbers entirely
+
+  @media screen and (min-width: 600px) {
+    display: table-cell;
+    text-align: right;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+    user-select: none;
+    opacity: 0.7;
+  }
+}
