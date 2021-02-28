@@ -31,7 +31,13 @@ export function BlogPost({ blogPost, renderedContent }: BlogPostProps) {
           />
         </div>
         <Container maxWidth="lg" component="article">
-          <Typography gutterBottom align="center" component="h1" variant="h3">
+          <Typography
+            gutterBottom
+            align="center"
+            component="h1"
+            variant="h3"
+            color="textSecondary"
+          >
             {blogPost.title}
           </Typography>
 

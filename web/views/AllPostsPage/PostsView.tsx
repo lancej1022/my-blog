@@ -17,7 +17,13 @@ const PostsView = ({ allPosts }: Props) => {
     <>
       <PageLayout title="All blog posts">
         <Container maxWidth="md" className={styles['posts-container']}>
-          <Typography variant="h2" component="h1" align="center" gutterBottom>
+          <Typography
+            color="textSecondary"
+            variant="h2"
+            component="h1"
+            align="center"
+            gutterBottom
+          >
             All Blog Posts
           </Typography>
           <BlogListVertical posts={allPosts} />

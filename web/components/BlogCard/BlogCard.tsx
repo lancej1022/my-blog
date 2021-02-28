@@ -75,7 +75,7 @@ export function BlogCard({ blogPost }: BlogCardProps) {
             </Typography>
           </span>
           <Box fontStyle="italic">
-            <Typography variant="body1" color="textSecondary" component="p">
+            <Typography variant="body1" color="textPrimary" component="p">
               {textPreview}
             </Typography>
           </Box>

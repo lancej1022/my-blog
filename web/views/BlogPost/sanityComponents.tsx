@@ -17,6 +17,7 @@ export const sanityComponents = {
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="h4"
       component="h1"
+      color="textSecondary"
       style={{ fontWeight: 500 }}
     >
       {children}
@@ -27,6 +28,7 @@ export const sanityComponents = {
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="h5"
       component="h2"
+      color="textSecondary"
       style={{ fontWeight: 500 }}
     >
       {children}
@@ -37,6 +39,7 @@ export const sanityComponents = {
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="h6"
       component="h3"
+      color="textSecondary"
       style={{ fontWeight: 500 }}
     >
       {children}
@@ -47,6 +50,7 @@ export const sanityComponents = {
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="h6"
       component="h4"
+      color="textSecondary"
       style={{ fontWeight: 500 }}
     >
       {children}
@@ -57,6 +61,7 @@ export const sanityComponents = {
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="h6"
       component="h5"
+      color="textSecondary"
       style={{ fontWeight: 500 }}
     >
       {children}
@@ -67,6 +72,7 @@ export const sanityComponents = {
       className={`${styles['heading-margin']} ${styles['text-width-wrapper']} ${styles['text-margin']}`}
       variant="h6"
       component="h6"
+      color="textSecondary"
       style={{ fontWeight: 500 }}
     >
       {children}

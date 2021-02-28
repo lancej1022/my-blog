@@ -49,7 +49,12 @@ export function PostHero({ blogPost }: PostHeroProps) {
               Featured Post
             </Typography>
           </Grid>
-          <Typography className={styles['slanty-boi__title']} variant="h3" component="h2">
+          <Typography
+            color="textSecondary"
+            className={styles['slanty-boi__title']}
+            variant="h3"
+            component="h2"
+          >
             {blogPost.title}
           </Typography>
         </Grid>

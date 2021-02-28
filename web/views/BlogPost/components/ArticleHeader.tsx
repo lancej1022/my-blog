@@ -51,10 +51,10 @@ export function ArticleHeader({ blogPost }: CardHeaderProps) {
         }
         subheader={
           <span className={styles['date-wrapper']}>
-            <Typography component="time" variant="body1">
+            <Typography component="time" variant="body1" color="textPrimary">
               {format(parseISO(blogPost.date), 'LLLL d, yyyy')}
             </Typography>
-            <Typography variant="body1" component="span">
+            <Typography variant="body1" component="span" color="textPrimary">
               Estimated read time: {humanReadableEstimate(blogPost)}
             </Typography>
           </span>

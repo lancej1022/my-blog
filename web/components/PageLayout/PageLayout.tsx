@@ -52,7 +52,7 @@ export const PageLayout = ({ children, classes, title }: PageLayoutProps) => {
       <Container disableGutters maxWidth={false}>
         <NavigationBar />
         <main>{children}</main>
-        <Box component="footer" mt={5}>
+        <Box component="footer" mt={5} mb={5}>
           <Copyright />
         </Box>
       </Container>
