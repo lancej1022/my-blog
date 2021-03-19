@@ -13,6 +13,7 @@ import styles from './blogPostComponents.module.scss';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 600,
+    margin: '0 auto',
   },
   avatarSize: {
     width: 80,
