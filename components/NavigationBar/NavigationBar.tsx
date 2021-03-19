@@ -98,7 +98,7 @@ export const NavigationBar = (): JSX.Element => {
             color="primary"
             aria-label="Twitter link"
             component="a"
-            href="https://twitter.com"
+            href="https://twitter.com/6catsinacoat"
           >
             <TwitterIcon />
           </IconButton>
